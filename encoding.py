@@ -10,10 +10,10 @@ def bin2hex(b):
 
 # we want 怯  but let's say it's been incorrectly decoded into latin-1
 
-bad = '怯'  # or explicitly:  bad = '怯'.decode('latin1')  (though this will encode the erroneous latin-1 characters as unicode characters)
+bad = '怯'.decode('latin1')  # (though this will encode the erroneous latin-1 characters as unicode characters)
 
 # now it's a series of bytes like:
-st = '\xe6\x80\xaf'
+st = u'\xe6\x80\xaf'
 print st == bad
 
 # These come from the fact that 怯 has a unicode character point of: 0x602f  (and as an base 10 integer of: 24623 )
